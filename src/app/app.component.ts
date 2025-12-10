@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PipeComponent } from "./pipes/pipe/pipe.component";
+import { PipeComponent } from './pipes/pipe/pipe.component';
+import { UsersComponent } from '../components/users/users.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, PipeComponent],
+  imports: [UsersComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'angular';
