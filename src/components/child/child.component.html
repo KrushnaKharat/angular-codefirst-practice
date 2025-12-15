@@ -1,0 +1,25 @@
+<p>Child data after recienving from parent</p>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    name
+                </th>
+                <th>
+                    email
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of sendChild">
+            <tr>
+                <td> {{item.name}} </td>
+                <td> {{item.email}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="p-10">
+    <!-- Child = {{childFiltering}} -->
+</div>

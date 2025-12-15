@@ -1,0 +1,28 @@
+<form [formGroup]="userForm" class="flex bg-gray-400 flex-col w-1/2 m-auto" (ngSubmit)="onSubmit() ">
+    <label for="" class="text-center">Email</label>
+    <input type="email" formControlName="email" name="email" class="border border w-1/2 m-auto" id="email ">
+    @if(isValid('email')){
+    <span class="text-red-500">
+        @if(userForm.get('email')?.errors?.['required']){
+        Email is required
+        }
+        @if(userForm.get('email')?.errors?.['email']){
+        Enter correct email
+        }
+    </span>
+    }
+    <label for="" class="text-center"> Password</label>
+    <input type="password" name="email" formControlName="password" id="passwordId" class="border w-1/2 m-auto">
+    @if(isValid('password')){
+    <span class="text-red-500">
+        @if(userForm.get('password')?.errors?.['required']){
+        password is required
+        }
+        @if(userForm.get('password')?.errors?.['maxLength()']){
+        password must be max 6 length
+        }
+    </span>
+    }
+
+    <button type="submit" class="bg-amber-200  cursor-pointer w-1/2 m-auto mt-4 rounded-lg p-2 "> Save</button>
+</form>

@@ -1,0 +1,49 @@
+<div class="w-full bg-gray-900 text-white justify-center">
+    <div class="flex flex-col  w-1/2 bg-gray-900 text-white">
+        <h2 class="text-center ">
+            Parent Component
+        </h2>
+        <h3 class="text-center ">
+            Parent List
+        </h3>
+        <table class="bg-gray-900 text-white">
+            <thead>
+                <tr class="border">
+                    <th>Name</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of getData">
+                <tr class="border text-center font-semibold">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <app-child [sendChild]="getData" (childMessage)="getMsg($event)" (childTable)="getTableFromChild($event)" />
+
+    {{childmsg}}
+
+
+    <div>
+        <h1>
+            Table from child
+        </h1>
+        <table class="bg-gray-900 text-white">
+            <thead>
+                <tr class="border">
+                    <th>Name</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of childTable">
+                <tr class="border text-center font-semibold">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
